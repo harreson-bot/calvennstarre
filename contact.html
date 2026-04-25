@@ -205,3 +205,36 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+
+<script>
+// Show success message on page load after form submission
+window.addEventListener('load', function() {
+  // Check for form submission success via sessionStorage
+  if (sessionStorage.getItem('formSubmitted')) {
+    const successDiv = document.createElement('div');
+    successDiv.style.cssText = 'background:#2D0A5E; color:white; padding:1.5rem; border-radius:12px; margin-bottom:2rem; text-align:center; position:fixed; top:80px; left:50%; transform:translateX(-50%); z-index:1000; max-width:500px; animation:slideDown 0.5s ease;';
+    successDiv.innerHTML = '<h3 style="color:#B8941F; margin:0 0 0.5rem 0;">✓ Message Sent!</h3><p style="margin:0;">Thank you for reaching out. I\'ll get back to you within 24 hours.</p>';
+    document.body.insertBefore(successDiv, document.body.firstChild);
+    sessionStorage.removeItem('formSubmitted');
+    
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      successDiv.style.opacity = '0';
+      successDiv.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => successDiv.remove(), 500);
+    }, 5000);
+  }
+});
+
+// Mark submission when form is submitted
+document.querySelector('form')?.addEventListener('submit', () => {
+  sessionStorage.setItem('formSubmitted', 'true');
+});
+</script>
+
+<style>
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
