@@ -948,13 +948,13 @@ footer {
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 960px) {
   .hero-inner { grid-template-columns: 1fr; text-align: center; }
-  .hero-image { display: none; }
+  .hero-image { margin-top: 2rem; }
   .hero p, .hero-buttons { margin-left: auto; margin-right: auto; }
   .hero-buttons { justify-content: center; }
   .hero-stats { justify-content: center; }
 
   .about-inner { grid-template-columns: 1fr; }
-  .about-image-wrap { display: none; }
+  .about-image-wrap { margin-bottom: 2rem; }
 
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; }
