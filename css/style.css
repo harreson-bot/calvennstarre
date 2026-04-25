@@ -4,10 +4,10 @@
    ================================================ */
 
 :root {
-  --purple-deep:   #2D0A5E;
-  --purple-royal:  #4B1FA8;
-  --purple-mid:    #6B35C8;
-  --purple-light:  #9B6EE8;
+  --purple-deep:   #1F0047;
+  --purple-royal:  #2D0A5E;
+  --purple-mid:    #4B1FA8;
+  --purple-light:  #6B35C8;
   --purple-pale:   #F3EEFF;
   --gold:          #C9A227;
   --gold-light:    #E8C84A;
@@ -212,7 +212,7 @@ nav {
 
 /* ── HERO ────────────────────────────────────── */
 .hero {
-  background: linear-gradient(135deg, var(--dark) 0%, var(--purple-deep) 40%, var(--purple-royal) 100%);
+  background: var(--purple-deep);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -228,7 +228,7 @@ nav {
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(201,162,39,0.15) 0%, transparent 70%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -239,7 +239,7 @@ nav {
   left: -5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(155,110,232,0.2) 0%, transparent 70%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -303,7 +303,7 @@ nav {
   width: 380px;
   height: 460px;
   border-radius: 24px;
-  background: linear-gradient(135deg, var(--purple-mid), var(--purple-deep));
+  background: var(--purple-royal);
   border: 3px solid rgba(201,162,39,0.4);
   display: flex;
   align-items: center;
@@ -346,7 +346,7 @@ nav {
 
 /* ── PAGE HERO (inner pages) ─────────────────── */
 .page-hero {
-  background: linear-gradient(135deg, var(--dark) 0%, var(--purple-deep) 60%, var(--purple-royal) 100%);
+  background: var(--purple-deep);
   padding: 8rem 0 5rem;
   text-align: center;
   position: relative;
@@ -358,7 +358,7 @@ nav {
   position: absolute;
   top: -20%; right: -5%;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -415,7 +415,7 @@ nav {
 .about-img-box {
   width: 100%;
   aspect-ratio: 4/5;
-  background: linear-gradient(135deg, var(--purple-pale), rgba(75,31,168,0.12));
+  background: var(--purple-pale);
   border-radius: 20px;
   border: 2px solid rgba(75,31,168,0.12);
   display: flex;
@@ -513,7 +513,7 @@ nav {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--purple-royal), var(--gold));
+  background: var(--gold);
   transform: scaleX(0);
   transition: var(--transition);
 }
@@ -549,7 +549,7 @@ nav {
 
 /* ── TESTIMONIALS ────────────────────────────── */
 .testimonials-section {
-  background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-royal) 100%);
+  background: var(--purple-royal);
   position: relative;
   overflow: hidden;
 }
@@ -559,7 +559,7 @@ nav {
   position: absolute;
   top: -30%; right: -5%;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(201,162,39,0.1) 0%, transparent 70%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -600,7 +600,7 @@ nav {
 .author-avatar {
   width: 44px; height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  background: var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -649,7 +649,7 @@ nav {
 
 .blog-card-img {
   height: 200px;
-  background: linear-gradient(135deg, var(--purple-royal), var(--purple-deep));
+  background: var(--purple-royal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -933,13 +933,13 @@ footer {
 }
 
 /* ── UTILITIES ───────────────────────────────── */
-.bg-purple { background: linear-gradient(135deg, var(--purple-deep), var(--purple-royal)); }
+.bg-purple { background: var(--purple-royal); }
 .bg-light { background: var(--light-gray); }
 
 .divider {
   width: 64px;
   height: 4px;
-  background: linear-gradient(90deg, var(--purple-royal), var(--gold));
+  background: var(--gold);
   border-radius: 2px;
   margin: 1rem auto 2rem;
 }
