@@ -8,13 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
     $organization = $_POST['organization'] ?? '';
-    $subject = $_POST['subject'] ?? '';
+    $interest = $_POST['interest'] ?? '';
+    $event_date = $_POST['event_date'] ?? '';
     $message = $_POST['message'] ?? '';
 
     $to = 'calvenn@calvennstarre.com';
     $subject_line = "New Contact Form: $first_name $last_name";
-    $body = "Name: $first_name $last_name\nEmail: $email\nPhone: $phone\nOrganization: $organization\nSubject: $subject\n\nMessage:\n$message";
-    $headers = "From: $email\r\nReply-To: $email";
+    $body = "Name: $first_name $last_name\nEmail: $email\nPhone: $phone\nOrganization: $organization\nInterested In: $interest\nEvent Date: $event_date\n\nMessage:\n$message";
+    $headers = "From: noreply@calvennstarre.com\r\nReply-To: $email";
 
     if (mail($to, $subject_line, $body, $headers)) {
         http_response_code(200);
