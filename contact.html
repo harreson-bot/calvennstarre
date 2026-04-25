@@ -100,7 +100,7 @@
       <div class="contact-form">
         <h3 style="color:var(--purple-deep); margin-bottom:1.5rem; font-size:1.3rem;">Send an Inquiry</h3>
         <form action="https://formspree.io/f/mojyblka" enctype="application/x-www-form-urlencoded" method="POST">
-          <input type="hidden" name="_next" value="https://www.calvennstarre.com/contact.html" />
+          <input type="hidden" name="_next" value="https://www.calvennstarre.com/contact.html?submitted=true" />
           <div class="grid-2" style="gap:1rem;">
             <div class="form-group">
               <label for="fname">First Name *</label>
@@ -203,19 +203,15 @@
 </footer>
 
 <script src="js/main.js"></script>
-</body>
-</html>
-
 <script>
 // Show success message on page load after form submission
 window.addEventListener('load', function() {
-  // Check for form submission success via sessionStorage
-  if (sessionStorage.getItem('formSubmitted')) {
+  // Check for form submission success via URL query parameter
+  if (window.location.search.includes('submitted=true')) {
     const successDiv = document.createElement('div');
     successDiv.style.cssText = 'background:#2D0A5E; color:white; padding:1.5rem; border-radius:12px; margin-bottom:2rem; text-align:center; position:fixed; top:80px; left:50%; transform:translateX(-50%); z-index:1000; max-width:500px; animation:slideDown 0.5s ease;';
     successDiv.innerHTML = '<h3 style="color:#B8941F; margin:0 0 0.5rem 0;">✓ Message Sent!</h3><p style="margin:0;">Thank you for reaching out. I\'ll get back to you within 24 hours.</p>';
     document.body.insertBefore(successDiv, document.body.firstChild);
-    sessionStorage.removeItem('formSubmitted');
     
     // Auto-hide after 5 seconds
     setTimeout(() => {
@@ -223,12 +219,10 @@ window.addEventListener('load', function() {
       successDiv.style.transition = 'opacity 0.5s ease';
       setTimeout(() => successDiv.remove(), 500);
     }, 5000);
+    
+    // Clean up URL (remove query param)
+    window.history.replaceState({}, document.title, window.location.pathname);
   }
-});
-
-// Mark submission when form is submitted
-document.querySelector('form')?.addEventListener('submit', () => {
-  sessionStorage.setItem('formSubmitted', 'true');
 });
 </script>
 
@@ -238,3 +232,6 @@ document.querySelector('form')?.addEventListener('submit', () => {
   to { opacity: 1; transform: translateY(0); }
 }
 </style>
+</body>
+</html>
+
